@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/30 23:34:29 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 22:49:01 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:25:04 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_if_arg_value(char *s, t_data *data)
 		if (s[i] && ft_strchr("1234567890", s[i]))
 			return ;
 	}
-	error("No or wrong value at arg", data->op->line_nbr);
+	error("Invalid or missing argument", data->op->line_nbr);
 }
 
 static void	check_if_valid_arg(char *s, t_data *data)
@@ -48,7 +48,7 @@ static void	check_if_valid_arg(char *s, t_data *data)
 			break ;
 	}
 	if (tmp[i] && tmp[i] != '\0')
-		error("wrong input at argument", data->op->line_nbr);
+		error("Invalid input", data->op->line_nbr);
 	free(tmp);
 }
 
@@ -64,7 +64,7 @@ void		arg_value(t_data *data, char **line)
 		check_if_valid_arg(tmp, data);
 		check_if_arg_value(tmp, data);
 		if (j > data->op_nbr)
-			error("to many arguments for instruction", data->op->line_nbr);
+			error("Too many arguments for instruction", data->op->line_nbr);
 		if (tmp[0] == 'r')
 			set_value_reg(data, tmp, j);
 		else

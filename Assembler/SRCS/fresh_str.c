@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 12:32:48 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:14:50 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:29:36 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		fresh_str(char **s, int l)
 		return ;
 	}
 	else if ((tmp && ft_strlen(tmp) < 2) || check_line(tmp) == -1)
-		error("no instruction / comment", l);
+		error("No instruction or comment", l);
 	else if (ft_strchr(tmp, COMMENT_CHAR))
 		array = ft_strsplit(tmp, COMMENT_CHAR);
 	else

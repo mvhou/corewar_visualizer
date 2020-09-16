@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 13:17:37 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:14:06 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:27:56 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	check_last_char(t_data *data)
 	}
 	ch = ft_strrchr(str, '\n');
 	if (ch == NULL || check_last_line(ch) == -1)
-		error("file does not end with \\n", 0);
+		error("File does not end with a newline", 0);
 }
 
 static void	get_file_name(char **argv, int argc, t_data *data)

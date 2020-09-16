@@ -6,7 +6,7 @@
 /*   By: eutrodri <eutrodri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/13 14:45:58 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:13:58 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:26:34 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	comment_after_quote(char **quote, char **s, t_data *data)
 		free(tmp2);
 		return ;
 	}
-	error("wrong input after, comment/name", data->line);
+	error("Invalid input after comment or name", data->line);
 }
 
 void	check_comment(char *tmp, char **s)

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 13:20:30 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 23:46:28 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:30:27 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	read_op(t_data *data)
 			data->op_nbr++;
 		}
 		else if (ft_strcmp(s, "") != 0)
-			error("Wrong input", data->line);
+			error("Invalid input", data->line);
 		free(s);
 	}
 	if (ret != 0)
-		error("Can't read", data->line);
+		error("Read error", data->line);
 }

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/10 17:05:58 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:14:14 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:28:31 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void		read_name_comment(t_data *data)
 		ret = get_next_line(data->fd_r, &s);
 		data->line++;
 		if (ret <= 0)
-			error("file is incomplete", 0);
+			error("Incomplete file", 0);
 		comment_name_str(&s);
 		line = ft_strsplit(s, ' ');
 		if (line[0] && ft_strstr(line[0], NAME_CMD_STRING))
@@ -97,7 +97,7 @@ void		read_name_comment(t_data *data)
 		else if (line[0] && ft_strstr(line[0], COMMENT_CMD_STRING))
 			store_commend(s, data);
 		else if (ft_strcmp(s, "") != 0)
-			error("no comment / name", data->line);
+			error("Missing comment or name", data->line);
 		free_array_str(&line, &s, 2);
 	}
 	check_length(data);

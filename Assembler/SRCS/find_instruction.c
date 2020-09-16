@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 22:17:01 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:14:34 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:28:54 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	add_instruction(t_data *data, char *arg)
 {
 	data->op->instruction_code = instructions(arg);
 	if (data->op->instruction_code == 0)
-		error("instruction does not exist", data->op->line_nbr);
+		error("Invalid instruction", data->op->line_nbr);
 	return (1);
 }
 

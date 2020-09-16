@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 10:15:26 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 22:47:50 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:31:36 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	find_label(t_data *data, char *s)
 		free_array_str(&split, NULL, 0);
 		return (data->label->op_nbr);
 	}
-	error("argument label not exist", data->op->line_nbr);
+	error("Label does not exist", data->op->line_nbr);
 	return (-1);
 }
 
@@ -62,7 +62,7 @@ static void	value_check_r(t_data *data, int c)
 {
 	if (data->op->arg_t[c] == 2 || data->op->arg_t[c] == 3\
 	|| data->op->arg_t[c] == 5)
-		error("wrong argument of type for instruction", data->op->line_nbr);
+		error("Invalid argument type for instruction", data->op->line_nbr);
 	data->op->arg_t[c] = 1;
 }
 
@@ -79,7 +79,7 @@ void		set_value_reg(t_data *data, char *line, int c)
 		if (line[i] && ft_isdigit(line[i]))
 			i++;
 		else
-			error("wrong input for t_reg", data->op->line_nbr);
+			error("Invalid value for T_REG", data->op->line_nbr);
 	}
 	i = 1;
 	while (line[i])
@@ -90,7 +90,7 @@ void		set_value_reg(t_data *data, char *line, int c)
 	str[i - 1] = '\0';
 	data->op->argument[c] = ft_atoi(str);
 	if (data->op->argument[c] < 0 || data->op->argument[c] > 99)
-		error("wrong input for t_reg", data->op->line_nbr);
+		error("Invalid value for T_REG", data->op->line_nbr);
 	free(line);
 }
 
@@ -104,7 +104,7 @@ void		set_value_dir(t_data *data, char *s, int c)
 	else if (i == 3 || i == 4 || i == 5 || i == 7)
 		data->op->arg_t[c] = 3;
 	else
-		error("wrong argument type for instruction", data->op->line_nbr);
+		error("Invalid argument type for instruction", data->op->line_nbr);
 	if (ft_strchr(s, ':'))
 		i = 1;
 	s = remove_tokens(s);

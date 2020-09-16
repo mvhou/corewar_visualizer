@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 21:05:27 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:13:48 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:26:16 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		main(int argc, char **argv)
 	t_data	*data;
 
 	if (argc < 2)
-		error("Not Enough Arguments", 0);
+		error("Too few arguments", 0);
 	data = (t_data*)ft_memalloc(sizeof(t_data));
 	check_file(argv, argc, data);
 	read_name_comment(data);

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 13:11:32 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/14 15:16:36 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:33:13 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		valid_line(t_data *data, char *line)
 
 	i = count_separation(line);
 	if (i > data->op->nbr_args)
-		error("to manny arguments for instruction", data->op->line_nbr);
+		error("Too many arguments for instruction", data->op->line_nbr);
 	else if (i < data->op->nbr_args)
-		error("to less arguments for instruction", data->op->line_nbr);
+		error("Too few arguments for instruction", data->op->line_nbr);
 }
