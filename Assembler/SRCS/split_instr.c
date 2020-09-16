@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:14:21 by eutrodri      #+#    #+#                 */
-/*   Updated: 2020/09/17 00:32:07 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 00:48:08 by eutrodri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	split_inst(char *line)
 	if (nbr > 0)
 		error("File does not end with a newline", 0);
 	error(\
-	"Instruction does not exist and does not end with a newline at last line", 0);
+	"Instruction does not exist and does not end with a \
+	newline at last line", 0);
 	return (nbr);
 }
