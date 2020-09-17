@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 19:30:03 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 22:45:31 by mvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 02:20:24 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ static void	give_id(t_player *players, int plr)
 	int		id;
 
 	id = 1;
+	if (plr > MAX_PLAYERS)
+	{
+		ft_printf("Error: Maximum number of players (%i) exceeded\n",
+		MAX_PLAYERS);
+		exit(12);
+	}
+	if (plr < 1)
+		exit_vm(20, NULL);
 	while (players->prev)
 		players = players->prev;
 	while (id <= plr)

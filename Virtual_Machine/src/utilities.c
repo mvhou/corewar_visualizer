@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 11:19:01 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 22:43:36 by mvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 02:18:11 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,28 @@ int		get_pos(int position, int distance)
 	return (new_pos % MEM_SIZE);
 }
 
+void	print_arg_type(t_instruction ins, int i)
+{
+	if (ins.arg_type[i] == T_REG)
+		ft_printf("r");
+	else if (ins.arg_type[i] == T_DIR)
+		ft_printf("%%");
+}
+
 void	print_instruction_data(t_cursor *c)
 {
 	t_instruction ins;
 
 	ins = *(c->ins);
-	ft_printf("cursor%5i | ", c->pos);
+	ft_printf("pos%5i | ", c->pos);
 	ft_printf("%s ", g_op_tab[ins.op].name);
-	if (ins.arg_type[0] == T_REG)
-		ft_printf("r");
+	print_arg_type(ins, 0);
 	if (ins.arg_type[0])
 		ft_printf("%i ", ins.arg1);
-	if (ins.arg_type[1] == T_REG)
-		ft_printf("r");
+	print_arg_type(ins, 1);
 	if (ins.arg_type[1])
 		ft_printf("%i ", ins.arg2);
-	if (ins.arg_type[2] == T_REG)
-		ft_printf("r");
+	print_arg_type(ins, 2);
 	if (ins.arg_type[2])
 		ft_printf("%i ", ins.arg3);
 	if (ins.op == 9)
