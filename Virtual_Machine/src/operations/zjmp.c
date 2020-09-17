@@ -6,17 +6,11 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 15:55:07 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:00:57 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 09:24:05 by eutrodri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/vm.h"
-
-/*
-** zjmp get an index defined by c->ins->arg1 (T_DIR)
-** if carry == 1 then cursor moves to (c->pos + (index % IDX_MOD)) % MEM_SIZE
-** else move cursor 2 bytes
-*/
 
 int				zjmp(t_cursor *c, t_game *cw)
 {

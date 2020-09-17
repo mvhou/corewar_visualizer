@@ -6,16 +6,11 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 16:36:45 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 21:50:02 by eovertoo      ########   odam.nl         */
+/*   Updated: 2020/09/17 09:23:44 by eutrodri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/vm.h"
-
-/*
-**	aff takes a T_REG
-**	and print the value on the standard ouput if the aflag is on
-*/
 
 int				aff(t_cursor *c, t_game *cw)
 {

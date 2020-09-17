@@ -6,22 +6,11 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 15:51:08 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:20:56 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 09:23:55 by eutrodri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/vm.h"
-
-/*
-**	sti gets 3 arguments and writes the value of argument1 to an address
-**	if argument2 is a T_IND the address is:
-**	current_position + (argument2 % IDX_MOD)
-**	else the address is:
-**	current_position + ((argument2 + argument3) % IDX_MOD)
-**	arg1		T_REG
-**	arg2		T_REG/T_DIR/T_IND
-**	arg3		T_REG/T_DIR
-*/
 
 int				sti(t_cursor *c, t_game *cw)
 {

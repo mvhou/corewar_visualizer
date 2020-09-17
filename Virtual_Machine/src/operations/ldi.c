@@ -6,27 +6,11 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 14:58:56 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:21:31 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 09:23:29 by eutrodri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/vm.h"
-
-/*
-**  ldi takes 3 arguments
-**  arg1    T_REG/T_DIR/T_IND
-**  arg2    T_REG/T_DIR
-**  arg3    T_REG
-**  ldi reads 4 bytes from the address current_pos + ((arg1 + arg2) % IDX_MOD)
-**  and saves the result to arg3
-**  if arg1 is a T_IND the 4 bytes are read from current_pos + (arg1 % IDX_MOD)
-**  if the value of arg3 != 0, carry is set to 0 else cary is set to 1
-*/
-
-/*
-**  lldi is the same as ldi but without % IDX_MOD
-**  if arg1 == T_IND then the % IDX_MOD is still performed
-*/
 
 int		ldi(t_cursor *c, t_game *cw)
 {
