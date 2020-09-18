@@ -17,8 +17,16 @@
 # include <ncurses.h>
 # include <curses.h>
 
+/*
+** Main window height and width
+*/
+
 # define HEIGHT 64
 # define WIDTH 192
+
+/*
+** Speed setting presets
+*/
 
 # define INSTANT 0
 # define WARP 1

@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:41:08 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 14:54:31 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 15:04:42 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,11 @@ void		v_init_colors(void)
 	init_pair(14, COLOR_WHITE, COLOR_BLACK);
 }
 
+/*
+** change v_new->speed to change the speed of the code
+** change v_new->intro to change the speed of the intro
+*/
+
 t_visual	*v_init_vis(t_player *players)
 {
 	t_visual *v_new;
@@ -82,7 +87,7 @@ t_visual	*v_init_vis(t_player *players)
 		return (NULL);
 	initscr();
 	curs_set(0);
-	v_new->speed = INSTANT;
+	v_new->speed = WARP;
 	v_new->intro = INSTANT;
 	v_new->win = newwin(HEIGHT + 2, WIDTH + 2, 1, 10);
 	v_new->stats = newwin(7, 20, 1, WIDTH + 13);
