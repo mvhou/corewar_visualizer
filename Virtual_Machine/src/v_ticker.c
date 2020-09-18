@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 13:43:53 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 14:56:58 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 18:14:31 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,4 @@ void	v_print_ticker(t_game *cw, t_visual *vis)
 	}
 	if (walker)
 		v_clean_ticker(walker, temp);
-	wrefresh(vis->ticker);
 }

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 10:55:23 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/17 16:51:20 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 17:55:49 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,31 @@ void		set_to_nul(t_flag *flag)
 	flag->dump_flag = 0;
 	flag->mod = 0;
 	flag->vflag = 0;
+	flag->gflag = 0;
+}
+
+void		process_g_flag(char *str, t_flag *flags)
+{
+	flags->gflag = 1;
+	while (str)
+	{
+		if (*str == 'm')
+		{
+			flags->gflag += 2;
+			return ;
+		}
+		if (*str == 's')
+		{
+			flags->gflag += 4;
+			return ;
+		}
+		if (*str == 'b' || *str == 'w')
+		{
+			flags->gflag += 8;
+			return ;
+		}
+		str++;
+	}
 }
 
 int			check_flags(char **arg, t_flag *flags, int *i)
@@ -42,8 +67,8 @@ int			check_flags(char **arg, t_flag *flags, int *i)
 		else
 			exit_vm(3, arg[*i]);
 	}
-	else if (ft_strcmp(arg[*i], "-g") == 0)
-		flags->gflag = 1;
+	else if (arg[*i][0] == '-' && arg[*i][1] == 'g')
+		process_g_flag(arg[*i], flags);
 	else
 		return (-1);
 	return (0);

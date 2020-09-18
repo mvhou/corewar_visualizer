@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 22:15:00 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 11:41:28 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 17:51:17 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 	cw = game_set_par(players);
 	cw->flag = flag;
 	if (flag.gflag)
-		cw->v = v_init_vis(players);
+		cw->v = v_init_vis(players, flag.gflag);
 	winner = game_loop(cw);
 	kill_all_cursors(cw);
 	if (cw->v)

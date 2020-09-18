@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 22:57:14 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 11:40:39 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 17:30:32 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	v_op_live(t_visual *vis, t_v_ins *ins)
 	int i;
 
 	i = 0;
-	wattron(vis->win, A_BOLD);
 	while (i < ins->size)
 	{
 		wattron(vis->win, \
@@ -65,5 +64,4 @@ void	v_op_live(t_visual *vis, t_v_ins *ins)
 		COLOR_PAIR((vis->arena[(ins->pos + i) % MEM_SIZE] >> 16) + 9));
 		i++;
 	}
-	wattroff(vis->win, A_BOLD);
 }

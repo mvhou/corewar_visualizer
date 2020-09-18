@@ -66,7 +66,7 @@ typedef struct		s_visual
 	struct s_tick	*t;
 }					t_visual;
 
-t_visual			*v_init_vis(t_player *players);
+t_visual			*v_init_vis(t_player *players, int flag);
 void				v_refresh(t_game *cw, t_visual *vis, t_cursor *cur);
 void				v_get_hex_str(int num, char *str);
 void				v_print_pixel(t_visual *v, int pos);
@@ -84,5 +84,6 @@ void				v_set_both(int value, short color, int *data);
 void				v_free_visual(t_game *cw);
 void				v_add_to_ticker(t_visual *vis, int op, int value);
 void				v_print_ticker(t_game *cw, t_visual *vis);
+void				v_init_colors(int flag);
 
 #endif

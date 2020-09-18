@@ -6,7 +6,7 @@
 #    By: eovertoo <eovertoo@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/02 17:11:36 by eovertoo      #+#    #+#                  #
-#    Updated: 2020/09/18 13:51:58 by anonymous     ########   odam.nl          #
+#    Updated: 2020/09/18 17:37:31 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC =  main.c utils_nflag.c check_args.c itoa_base.c reading.c intro.c\
 		operations/ldi.c\
 		v_init_visualizer.c v_print.c v_refresh.c v_free.c v_stat.c\
 		v_operations.c v_cursors.c v_new_instruction.c v_instructions.c\
-		v_ticker.c
+		v_ticker.c v_colors.c
 
 OBJ =  main.o utils_nflag.o check_args.o itoa_base.o reading.o intro.o\
 		str_rev_by_2.o game_setup.o game_set_par.o set_cursors.o free.o count.o\
@@ -32,7 +32,7 @@ OBJ =  main.o utils_nflag.o check_args.o itoa_base.o reading.o intro.o\
 		print_dump.o\
 		v_init_visualizer.o v_print.o v_refresh.o v_free.o v_stats.o\
 		v_operations.o v_cursors.o v_new_instruction.o v_instructions.o\
-		v_ticker.o
+		v_ticker.o v_colors.o
 
 FLAGS = -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 17:03:53 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 22:49:51 by mvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/18 18:33:04 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ line, then exits\n");
 	ft_printf("			-a	: Prints output from 'aff', default is to hide \
 it\n");
 	ft_printf("			-v	: Verbose mode\n");
+	ft_printf("			-g	: Graphics mode. ");
+	ft_printf("-g is default, -gb for greyscale, -gm for matrix\n");
 	exit(1);
 }
