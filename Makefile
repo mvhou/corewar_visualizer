@@ -6,7 +6,7 @@
 #    By: eovertoo <eovertoo@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/02 17:11:36 by eovertoo      #+#    #+#                  #
-#    Updated: 2020/09/16 21:42:15 by eutrodri      ########   odam.nl          #
+#    Updated: 2020/09/18 13:52:11 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,10 @@ VM_SRC =  main.c utils_nflag.c check_args.c itoa_base.c reading.c intro.c\
 		operations/fork.c operations/live.c operations/sti.c operations/aff.c\
 		operations/zjmp.c operations/st.c operations/add.c operations/sub.c\
 		operations/and.c operations/or.c operations/xor.c write.c\
-		operations/ldi.c
+		operations/ldi.c \
+		v_init_visualizer.c v_print.c v_free.c v_operations.c v_stats.c\
+		v_cursors.c v_refresh.c v_new_instruction.c v_instructions.c\
+		v_ticker.c
 
 VM_OBJ =  main.o utils_nflag.o check_args.o itoa_base.o reading.o intro.o\
 		str_rev_by_2.o game_setup.o game_set_par.o \
@@ -47,7 +50,10 @@ VM_OBJ =  main.o utils_nflag.o check_args.o itoa_base.o reading.o intro.o\
 		usage.o utils_nflag2.o nflag.o game_loop.o cursor.o enc_byte.o new.o\
 		utilities.o operations.o op.o fork.o sti.o aff.o zjmp.o live.o\
 		ld.o st.o add.o sub.o and.o or.o xor.o write.o ldi.o\
-		print_dump.o
+		print_dump.o\
+		v_init_visualizer.o v_print.o v_operations.o v_free.o v_stats.o\
+		v_cursors.o v_refresh.o v_new_instruction.o v_instructions.o\
+		v_ticker.o
 
 FLAGS = -Wall -Wextra -Werror
 

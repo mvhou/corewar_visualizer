@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 14:58:56 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:21:31 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 11:38:45 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int		ldi(t_cursor *c, t_game *cw)
 		arg2 = c->ins->arg2;
 	c->reg[c->ins->arg3] = get_argument(cw, 4, \
 	get_pos(c->pos, (arg1 + arg2) % IDX_MOD) - 1);
+	if (cw->v)
+		v_new_instruction(cw->v, 1, get_pos(c->pos, (arg1 + arg2) % IDX_MOD) \
+		- 1, 4);
 	return (0);
 }
 
@@ -65,6 +68,8 @@ int		lldi(t_cursor *c, t_game *cw)
 		c->ins->arg2 = c->reg[c->ins->arg2];
 	address = get_pos(c->pos, c->ins->arg1 + c->ins->arg2 - 1);
 	c->reg[c->ins->arg3] = get_argument(cw, 4, address);
+	if (cw->v)
+		v_new_instruction(cw->v, 1, address, 4);
 	if (c->reg[c->ins->arg3] == 0)
 		c->carry = 1;
 	else

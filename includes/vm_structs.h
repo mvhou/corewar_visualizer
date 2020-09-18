@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/30 13:32:50 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 21:51:52 by eovertoo      ########   odam.nl         */
+/*   Updated: 2020/09/17 16:54:27 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct			s_flag
 	int					vflag;
 	int					dump_flag;
 	int					mod;
+	int					gflag;
 }						t_flag;
 
 typedef struct			s_player
@@ -62,6 +63,7 @@ typedef struct			s_game
 	unsigned char		arena[MEM_SIZE + 1];
 	struct s_op			op_tab[16];
 	struct s_cursor		*c;
+	struct s_visual		*v;
 }						t_game;
 
 typedef struct			s_cursor

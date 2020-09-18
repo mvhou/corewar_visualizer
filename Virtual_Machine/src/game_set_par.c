@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/09 15:04:22 by eovertoo      #+#    #+#                 */
-/*   Updated: 2020/09/16 18:57:59 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/17 16:53:17 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ t_game			*game_set_par(t_player *players)
 	while (cursors->prev)
 		cursors = cursors->prev;
 	game_data->c = cursors;
+	game_data->v = NULL;
 	return (game_data);
 }

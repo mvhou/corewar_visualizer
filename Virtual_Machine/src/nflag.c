@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 10:55:23 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 22:42:37 by mvan-hou      ########   odam.nl         */
+/*   Updated: 2020/09/17 16:51:20 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int			check_flags(char **arg, t_flag *flags, int *i)
 		else
 			exit_vm(3, arg[*i]);
 	}
+	else if (ft_strcmp(arg[*i], "-g") == 0)
+		flags->gflag = 1;
 	else
 		return (-1);
 	return (0);

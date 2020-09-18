@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 11:20:20 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:11:59 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 13:09:25 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,7 @@ int			game_loop(t_game *cw)
 		}
 		if (cw->flag.dump_flag > 0 && cw->cycles_count == cw->flag.dump_flag)
 			exit(print_dump(cw));
+		if (cw->v)
+			v_refresh(cw, cw->v, cw->c);
 	}
 }

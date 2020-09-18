@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 22:15:00 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 18:17:58 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 11:41:28 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,12 @@ int		main(int argc, char **argv)
 	intro_players(players);
 	cw = game_set_par(players);
 	cw->flag = flag;
+	if (flag.gflag)
+		cw->v = v_init_vis(players);
 	winner = game_loop(cw);
 	kill_all_cursors(cw);
+	if (cw->v)
+		v_free_visual(cw);
 	free(cw);
 	ft_printf("Contestant %i, \"%s\", has won !\n", winner, \
 	get_winner(players, winner));

@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 15:51:08 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/16 19:20:56 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 11:17:40 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int				sti(t_cursor *c, t_game *cw)
 		c->ins->arg3 = c->reg[c->ins->arg3];
 	dst = get_pos(c->pos, (c->ins->arg2 + c->ins->arg3) % IDX_MOD);
 	write_to_memory(cw, c->ins->arg1, sizeof(T_REG), dst);
+	if (cw->v)
+		v_new_instruction(cw->v, 2, (dst << 16) | c->pos, 4);
 	return (0);
 }
