@@ -60,6 +60,7 @@ typedef struct		s_visual
 	WINDOW			*stats;
 	WINDOW			*ticker;
 	int				speed;
+	int				ins_count;
 	int				intro;
 	int				arena[MEM_SIZE];
 	struct s_v_ins	*ins;

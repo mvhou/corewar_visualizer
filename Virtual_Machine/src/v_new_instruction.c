@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 00:08:18 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 12:25:07 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 22:11:31 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,38 @@ void	v_add_to_list(t_visual *vis, t_v_ins *new)
 		v_add_to_tail(walker, new);
 }
 
+int		v_get_time(int op)
+{
+	if (op == 1)
+		return (10);
+	if (op == 2)
+		return (50);
+	return (75);
+}
+
+int		v_update_instruction(t_v_ins *ins, int op, int pos, int size)
+{
+	t_v_ins *walker;
+
+	walker = ins;
+	while (walker)
+	{
+		if (walker->op == op && walker->pos == pos && walker->size == size)
+		{
+			walker->time = v_get_time(op);
+			return (1);
+		}
+		walker = walker->next;
+	}
+	return (0);
+}
+
 void	v_new_instruction(t_visual *vis, int op, int pos, int size)
 {
 	t_v_ins *new;
 
+	if (v_update_instruction(vis->ins, op, pos, size))
+		return ;
 	if (vis)
 		new = (t_v_ins*)malloc(sizeof(t_v_ins));
 	new->op = op;
@@ -95,4 +123,5 @@ void	v_new_instruction(t_visual *vis, int op, int pos, int size)
 		v_add_to_list(vis, new);
 	else
 		vis->ins = new;
+	vis->ins_count += 1;
 }

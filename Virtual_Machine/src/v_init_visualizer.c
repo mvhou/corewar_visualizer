@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:41:08 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 18:24:31 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 22:30:52 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,9 @@ t_visual	*v_init_vis(t_player *players, int flag)
 		return (NULL);
 	initscr();
 	curs_set(0);
-	v_new->speed = WARP;
-	v_new->intro = WARP;
+	v_new->speed = INSTANT;
+	v_new->intro = INSTANT;
+	v_new->ins_count = 0;
 	v_new->win = newwin(HEIGHT + 2, WIDTH + 2, 1, 10);
 	v_new->stats = newwin(7, 20, 1, WIDTH + 13);
 	v_new->ticker = newwin(59, 20, 8, WIDTH + 13);

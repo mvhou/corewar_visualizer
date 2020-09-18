@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 10:55:23 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 17:55:49 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 22:25:25 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,6 @@ void		process_g_flag(char *str, t_flag *flags)
 		if (*str == 'm')
 		{
 			flags->gflag += 2;
-			return ;
-		}
-		if (*str == 's')
-		{
-			flags->gflag += 4;
-			return ;
-		}
-		if (*str == 'b' || *str == 'w')
-		{
-			flags->gflag += 8;
 			return ;
 		}
 		str++;

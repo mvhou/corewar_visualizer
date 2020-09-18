@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 17:03:50 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 18:35:35 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/18 20:07:15 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void		v_matrix_mode(void)
 {
-	init_color(COLOR_RED, 0, 500, 0);
-	init_color(COLOR_BLUE, 0, 500, 0);
-	init_color(COLOR_YELLOW, 0, 500, 0);
-	init_color(COLOR_MAGENTA, 0, 500, 0);
+	init_color(COLOR_RED, 0, 400, 0);
+	init_color(COLOR_BLUE, 0, 400, 0);
+	init_color(COLOR_YELLOW, 0, 400, 0);
+	init_color(COLOR_MAGENTA, 0, 400, 0);
 	init_color(COLOR_GREEN, 0, 200, 0);
 	init_color(COLOR_WHITE, 100, 300, 100);
 }
@@ -63,6 +63,4 @@ void		v_init_colors(int flag)
 	v_init_color_pairs();
 	if (flag & 2)
 		v_matrix_mode();
-	else if (flag & 8)
-		v_bw_mode();
 }
