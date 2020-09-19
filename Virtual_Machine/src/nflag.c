@@ -6,7 +6,7 @@
 /*   By: eutrodri <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 10:55:23 by anonymous     #+#    #+#                 */
-/*   Updated: 2020/09/18 22:25:25 by anonymous     ########   odam.nl         */
+/*   Updated: 2020/09/19 12:19:11 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		set_to_nul(t_flag *flag)
 void		process_g_flag(char *str, t_flag *flags)
 {
 	flags->gflag = 1;
-	while (str)
+	while (*str)
 	{
 		if (*str == 'm')
 		{
